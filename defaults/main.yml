@@ -1,0 +1,11 @@
+---
+# Application
+application_name: "default"
+application_path: "/app/{{ application_name }}"
+application_venv: "{{ application_path }}/venv"
+
+# Python
+python_binary: "/usr/bin/python"
+
+# Virtualenv
+virtualenv_python: "python"

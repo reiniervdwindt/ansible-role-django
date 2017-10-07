@@ -1,0 +1,15 @@
+---
+
+- name: "Create virtualenv and update pip"
+  pip: virtualenv="{{ application_venv }}" name=pip state=latest virtualenv_python="{{ virtualenv_python }}"
+
+- name: "Install requirements"
+  pip: virtualenv="{{ application_venv }}" requirements="{{release_path.stdout}}/requirements.txt"
+
+- name: "Run migrations"
+  command: "{{ python_binary }} {{ release_path.stdout }}/src/manage.py migrate --noinput"
+  run_once: true
+
+- name: "Collect static files"
+  command: "{{ python_binary }} {{ release_path.stdout }}/src/manage.py collectstatic --noinput"
+  run_once: true

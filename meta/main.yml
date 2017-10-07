@@ -1,0 +1,15 @@
+galaxy_info:
+  author: Reinier van der Windt
+  description: An Ansible Django Role
+  license: BSD
+  min_ansible_version: 1.2
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+
+  galaxy_tags:
+    - django
+
+dependencies: []
