@@ -5,7 +5,8 @@ application_path: "/app/{{ application_name }}"
 application_venv: "{{ application_path }}/venv"
 
 # Python
-python_binary: "/usr/bin/python"
+python_version: "3.8"
+python_binary: "/usr/bin/python{{ python_version }}"
 
 # Virtualenv
-virtualenv_python: "python"
+virtualenv_python: "python{{ python_version }}"
