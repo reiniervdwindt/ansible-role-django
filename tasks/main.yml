@@ -17,9 +17,9 @@
     PATH: "{{ ansible_env.PATH }}:{{ ansible_user_dir }}/.local/bin"
 
 - name: "Install requirements"
-  pip:
-    virtualenv: "{{ application_venv }}"
-    requirements: "{{release_path.stdout}}/requirements.txt"
+  command:
+    cmd: "{{ python_binary }} setup.py install"
+    chdir: "{{ release_path.stdout }}"
 
 - name: "Run migrations"
   command: "{{ python_binary }} {{ release_path.stdout }}/src/manage.py migrate --noinput"
