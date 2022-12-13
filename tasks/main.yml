@@ -18,7 +18,7 @@
 
 - name: "Install requirements"
   command:
-    cmd: "{{ python_binary }} setup.py install"
+    cmd: "{{ python_binary }} -m pip install ."
     chdir: "{{ release_path.stdout }}"
 
 - name: "Run migrations"
