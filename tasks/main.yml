@@ -26,5 +26,5 @@
   run_once: true
 
 - name: "Collect static files"
-  command: "{{ python_binary }} {{ release_path.stdout }}/src/manage.py collectstatic --noinput"
+  command: "{{ python_binary }} {{ release_path.stdout }}/src/manage.py collectstatic --noinput --clear"
   run_once: true
